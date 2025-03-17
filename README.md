@@ -28,3 +28,11 @@ Documentation:
 - README file
 - Final presentation
 
+## Sources
+
+Vainu:
+- Main source for company data
+
+Job posting sites:
+- Use existing web scraping tools
+- Job posting volume, keywords
