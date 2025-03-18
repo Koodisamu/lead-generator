@@ -174,3 +174,4 @@ cython_debug/
 .pypirc
 
 vainu/config.py
+vainu/vainu_data.json
