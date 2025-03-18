@@ -175,3 +175,5 @@ cython_debug/
 
 vainu/config.py
 vainu/vainu_data.json
+web-scraper/config.py
+config.py
