@@ -39,7 +39,7 @@ async def scrape_ampparit():
 
                 # ✅ Filter: Only save headlines that contain any of the keywords
                 if headline and company and any(keyword in headline.lower() for keyword in KEYWORDS):
-                    news_list.append({"company": company, "headline": headline})
+                    news_list.append({"media": company, "headline": headline})
 
         return pd.DataFrame(news_list, columns=["company", "headline"])
 
