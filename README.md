@@ -33,6 +33,14 @@ Documentation:
 Vainu:
 - Main source for company data
 
+
 Job posting sites (Duunitori):
 - Use existing web scraping tools
 - Job posting volume, keywords
+
+## Prospect validation
+- Turnover more than 500k€
+- Staff number over 10 people
+- Country: FI
+- Cities: "helsinki", "tampere", "vantaa", "espoo", "oulu", "turku", "lahti", "jyväskylä"
+
