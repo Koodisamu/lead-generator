@@ -20,7 +20,7 @@ Data pipeline:
 
 Data sources:
 - Vainu
-- Job applications
+- Duunitori
 - Use multiple sources
 
 
@@ -33,6 +33,6 @@ Documentation:
 Vainu:
 - Main source for company data
 
-Job posting sites:
+Job posting sites (Duunitori):
 - Use existing web scraping tools
 - Job posting volume, keywords
