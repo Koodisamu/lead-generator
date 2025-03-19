@@ -34,6 +34,9 @@ def clean_data(df):
     df["title"] = df["title"].apply(clean_title)
     df["location"] = df["location"].apply(clean_location)
 
+    # Remove hyphen from Y-tunnus
+    df["y_tunnus"] = df["y_tunnus"].str.replace("-", "", regex=True)
+
     # ✅ Add keyword matching column
     df = mark_matching_jobs(df)
 
