@@ -44,3 +44,9 @@ Job posting sites (Duunitori):
 - Country: FI
 - Cities: "helsinki", "tampere", "vantaa", "espoo", "oulu", "turku", "lahti", "jyväskylä"
 
+## What programs are needed for the project?
+- VS Code (Scrapers)
+- Azure (Data Lake / Storage account, Key Vault)
+- Fabric (Synapse Data Engineer, Power BI)
+- GitHub (Repository)
+- Jira (Kanban board)
