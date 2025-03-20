@@ -178,3 +178,6 @@ vainu/vainu_data.json
 web-scraper/config.py
 config.py
 web-scraper/sinkfile/
+news-scraper/sinkfile
+sinkfile
+lead-generator/sinkfile

@@ -23,7 +23,7 @@ elt
 pipeline
 data mesh
 data vault
-aPI
+api
 kafka
 tableau
 oracle
