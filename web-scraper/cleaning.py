@@ -12,9 +12,20 @@ def load_keywords(file_path):
         return []
 
 def clean_description(text):
-    # Remove emails, phone numbers and excessive spaces from descriptions
+    # Remove emails and phone numbers
     text = re.sub(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b", "***", text)
     text = re.sub(r"\+?\d[\d -]{8,}\d", "******", text)
+
+     # Replace commas inside descriptions with a space
+    text = text.replace(",", " ")
+    
+    # Remove newline characters and replace them with a space
+    text = text.replace("\n", " ")
+
+    # Remove both single and double quotes
+    text = text.replace('"', '').replace("'", "")
+    
+    # Remove excessive spaces (replace multiple spaces with a single space)
     text = re.sub(r"\s+", " ", text).strip()
     return text
 
