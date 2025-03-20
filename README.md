@@ -20,7 +20,7 @@ Data pipeline:
 
 Data sources:
 - Vainu
-- Job applications
+- Duunitori
 - Use multiple sources
 
 
@@ -33,6 +33,20 @@ Documentation:
 Vainu:
 - Main source for company data
 
-Job posting sites:
+
+Job posting sites (Duunitori):
 - Use existing web scraping tools
 - Job posting volume, keywords
+
+## Prospect validation
+- Turnover more than 500k€
+- Staff number over 10 people
+- Country: FI
+- Cities: "helsinki", "tampere", "vantaa", "espoo", "oulu", "turku", "lahti", "jyväskylä"
+
+## What programs are needed for the project?
+- VS Code (Scrapers)
+- Azure (Data Lake / Storage account, Key Vault)
+- Fabric (Synapse Data Engineer, Power BI)
+- GitHub (Repository)
+- Jira (Kanban board)
