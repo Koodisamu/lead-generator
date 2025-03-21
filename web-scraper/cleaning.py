@@ -30,12 +30,37 @@ def clean_description(text):
     return text
 
 def clean_title(title):
+    import re
+
+def clean_title(title):
     # Remove unnecessary symbols and short words from job titles
-    title = re.sub(r"\d+", "", title)  # Remove numbers
-    title = re.sub(r"\s*\(.*?\)", "", title)  # Remove parentheses
-    title = re.sub(r"\s*-\s.*", "", title)  # Remove hyphen and content after it
-    title = title.replace('"', "").strip()
+    title = re.sub(r"-", " ", title)  # Replace hyphens with a space
+    title = re.sub(r",", " ", title)  # Replace commas with a space
+    title = re.sub(r'\s*/\s*', " ", title)  # Replace '/' with a space
+    title = re.sub(r"\.{2,}", "", title)  # Remove consecutive dots (.. or more)
+    title = title.replace('"', "").replace("'", "").strip()  # Remove double and single quotes and trim spaces
+    title = re.sub(r"\s+", " ", title).strip() # Remove excessive spaces (replace multiple spaces with a single space)
+
+    # Remove emojis
+    emoji_pattern = re.compile(
+        "["
+        "\U0001F600-\U0001F64F"  # Emoticons
+        "\U0001F300-\U0001F5FF"  # Symbols & pictographs
+        "\U0001F680-\U0001F6FF"  # Transport & map symbols
+        "\U0001F700-\U0001F77F"  # Alchemical symbols
+        "\U0001F780-\U0001F7FF"  # Geometric shapes
+        "\U0001F800-\U0001F8FF"  # Supplemental symbols
+        "\U0001F900-\U0001F9FF"  # Supplemental symbols and pictographs
+        "\U0001FA00-\U0001FA6F"  # Symbols for legacy computing
+        "\U0001FA70-\U0001FAFF"  # More symbols
+        "\U00002702-\U000027B0"  # Dingbats
+        "\U000024C2-\U0001F251"
+        "]+", flags=re.UNICODE
+    )
+    title = emoji_pattern.sub("", title)  # Remove emojis
+
     return title
+
 
 def clean_location(location):
     # Standardize location names

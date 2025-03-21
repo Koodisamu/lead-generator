@@ -21,10 +21,14 @@ async def fetch(session, url):
         return await response.text()
 
 async def fetch_job_details(session, job_url):
-    """Fetches job description, location, and Y-tunnus asynchronously."""
+    """Fetches job title, description, location, and Y-tunnus asynchronously."""
     try:
         html = await fetch(session, job_url)
         soup = BeautifulSoup(html, "html.parser")
+
+        # ✅ Get the correct job title from <h1 class="text--break-word">
+        title_tag = soup.select_one("h1.text--break-word")
+        title = title_tag.get_text(strip=True) if title_tag else "Unknown"
 
         # ✅ Extract job description
         description = " ".join([
@@ -38,8 +42,6 @@ async def fetch_job_details(session, job_url):
 
         # ✅ Extract Y-tunnus
         y_tunnus = "Unknown"
-
-        # 🔹 Loop through all `info-listing__block` sections
         for block in soup.find_all("div", class_="info-listing__block"):
             heading = block.find("h4", class_="info-listing__heading")
             if heading and "Y-tunnus" in heading.get_text():
@@ -48,10 +50,10 @@ async def fetch_job_details(session, job_url):
                     y_tunnus = y_tunnus_value.get_text(strip=True)
                     break  # ✅ Stop searching after finding the first match
 
-        return description, location, y_tunnus
+        return title, description, location, y_tunnus
 
     except Exception:
-        return "N/A", "Unknown", "Unknown"
+        return "Unknown", "N/A", "Unknown", "Unknown"
 
 async def scrape_duunitori(max_pages=5):
     """Scrapes job listings from Duunitori asynchronously and filters jobs in Finland."""
@@ -66,31 +68,29 @@ async def scrape_duunitori(max_pages=5):
             job_items = soup.select(".job-box__hover.gtm-search-result")
 
             for item in job_items:
-                title = item.get("data-job-slug", "N/A").replace("-", " ").title()
                 company = item.get("data-company", "N/A").title()
                 job_url = item["href"] if "href" in item.attrs else "N/A"
                 full_url = f"https://duunitori.fi{job_url}" if job_url != "N/A" else "N/A"
 
                 job_listings.append({
                     "scrape_date": datetime.now().strftime("%Y-%m-%d"),
-                    "title": title.strip(),
                     "company": company.strip(),
                     "job_url": full_url,
                 })
 
-        # 🔄 Fetch job descriptions, locations, and Y-tunnus concurrently
+        # 🔄 Fetch job details concurrently
         job_tasks = [fetch_job_details(session, job["job_url"]) for job in job_listings]
         job_details = await asyncio.gather(*job_tasks)
 
         # ✅ Attach job details and filter only Finnish jobs
         final_listings = []
-        for job, (description, location, y_tunnus) in zip(job_listings, job_details):
+        for job, (title, description, location, y_tunnus) in zip(job_listings, job_details):
             if any(city in location for city in FINLAND_LOCATIONS):  # ✅ Keep only jobs in Finland
                 final_listings.append({
                     "y_tunnus": y_tunnus,  # ✅ Column order changed
                     "company": job["company"],
                     "scrape_date": job["scrape_date"],
-                    "title": job["title"],
+                    "title": title.strip(),  # ✅ Use the corrected title from job page
                     "location": location.strip(),
                     "description": description.strip(),
                 })
