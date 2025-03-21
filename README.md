@@ -51,7 +51,7 @@ Job posting sites (Duunitori):
 
 - Onni Niemelä (client, Skillio)
 
-## What's included in the project and how its set up
+## What's included in the project and how it's set up
 
 ### 1. Scrapers
 - Duunitori.fi scraper for scraping job postings in data engineering (code can be found in GitHub)
