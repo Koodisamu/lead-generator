@@ -44,9 +44,30 @@ Job posting sites (Duunitori):
 - Country: FI
 - Cities: "helsinki", "tampere", "vantaa", "espoo", "oulu", "turku", "lahti", "jyväskylä"
 
-## What programs are needed for the project?
-- VS Code (Scrapers)
-- Azure (Data Lake / Storage account, Key Vault)
-- Fabric (Synapse Data Engineer, Power BI)
-- GitHub (Repository)
-- Jira (Kanban board)
+## What's included in the project and how its set up
+
+1. Scrapers:
+- Duunitori.fi scraper for scraping job postings in data engineering (code can be found in GitHub)
+- Ampparit.com scraper for scraping news in IT and looking for certaing keywords (code can be found in GitHub)
+- Scrapers need to be run manually and locally
+
+2. GitHub
+- Repository including code for scrapers
+- Technical documentation (README)
+
+2. Azure:
+- Storage account / Data Lake: leadgeneratorstorage
+- Vainu api key and storage account connection string are stored in Key Vault
+
+3. Fabric:
+- Lakehouse: lead_generator_lakehouse for bronze and silver data
+- Warehouse: lead_generator_warehouse for gold data
+- Notebooks for transforming and cleaning data: clean_job_postings, clean_news, vainu_api_bronze_to_lakehouse, vainu_bronze_to_silver
+
+4. PowerBI:
+- App for sales team to look for leads
+
+5. Jira:
+- Kanban board including all tasks related to the project
+- Also some documentation included
+
