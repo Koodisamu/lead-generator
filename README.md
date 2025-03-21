@@ -44,9 +44,16 @@ Job posting sites (Duunitori):
 - Country: FI
 - Cities: "helsinki", "tampere", "vantaa", "espoo", "oulu", "turku", "lahti", "jyväskylä"
 
+## Team members and responsibilities
+- Samu Syväoja (code, notebooks)
+- Linda Ulma (code, notebooks, Azure, Fabric)
+- Tomi Jolkkonen (code)
+
+- Onni Niemelä (client, Skillio)
+
 ## What's included in the project and how its set up
 
-### 1. Scrapers:
+### 1. Scrapers
 - Duunitori.fi scraper for scraping job postings in data engineering (code can be found in GitHub)
 - Ampparit.com scraper for scraping news in IT and looking for certaing keywords (code can be found in GitHub)
 - Scrapers need to be run manually and locally
@@ -55,19 +62,19 @@ Job posting sites (Duunitori):
 - Repository including code for scrapers
 - Technical documentation (README)
 
-### 2. Azure:
+### 2. Azure
 - Storage account / Data Lake: leadgeneratorstorage
 - Vainu api key and storage account connection string are stored in Key Vault
 
-### 3. Fabric:
+### 3. Fabric
 - Lakehouse: lead_generator_lakehouse for bronze and silver data
 - Warehouse: lead_generator_warehouse for gold data
 - Notebooks for transforming and cleaning data: clean_job_postings, clean_news, vainu_api_bronze_to_lakehouse, vainu_bronze_to_silver
 
-### 4. PowerBI:
+### 4. PowerBI
 - App for sales team to look for leads
 
-### 5. Jira:
+### 5. Jira
 - Kanban board including all tasks related to the project
 - Also some documentation included
 
