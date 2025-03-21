@@ -34,7 +34,6 @@ def clean_title(title):
 
 def clean_title(title):
     # Remove unnecessary symbols and short words from job titles
-    title = re.sub(r"-", " ", title)  # Replace hyphens with a space
     title = re.sub(r",", " ", title)  # Replace commas with a space
     title = re.sub(r'\s*/\s*', " ", title)  # Replace '/' with a space
     title = re.sub(r"\.{2,}", "", title)  # Remove consecutive dots (.. or more)
