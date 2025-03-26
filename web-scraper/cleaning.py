@@ -66,12 +66,17 @@ def clean_location(location):
     return location.split(",")[0].strip() if location else "Unknown"
 
 def mark_matching_jobs(df, keywords):
-    # Create separate columns for each keyword, initializing with 0 and marking 1 if found
+    #Creates separate columns for each keyword, initializing with 0, and marking 1 if found.
     for keyword in keywords:
-        # Treating keywords with spaces as phrases and escaping any special regex characters
-        escaped_keyword = re.escape(keyword)  # Escape regex special characters
         df[keyword] = 0  # Initialize column with 0
-        df.loc[df["description"].str.contains(escaped_keyword, case=False, na=False), keyword] = 1
+
+        # Special rule for "ai" to match only as a full word
+        if keyword.lower() == "ai":
+            pattern = r"(?<!\w)ai(?!\w)"  # Ensures "ai" is not part of another word
+        else:
+            pattern = fr"\b{re.escape(keyword)}\b"  # Default match for other keywords
+
+        df.loc[df["description"].str.contains(pattern, case=False, na=False), keyword] = 1
     return df
 
 def clean_data(df):
