@@ -45,8 +45,8 @@ Job posting sites (Duunitori):
 - Cities: "helsinki", "tampere", "vantaa", "espoo", "oulu", "turku", "lahti", "jyväskylä"
 
 ## Team members and responsibilities
-- Samu Syväoja (code, notebooks)
-- Linda Ulma (code, notebooks, Azure, Fabric)
+- Samu Syväoja (code, Fabric)
+- Linda Ulma (code, Azure, Fabric)
 - Tomi Jolkkonen (code)
 
 - Onni Niemelä (client, Skillio)
@@ -67,9 +67,10 @@ Job posting sites (Duunitori):
 - Vainu api key and storage account connection string are stored in Key Vault
 
 ### 3. Fabric
-- Lakehouse: lead_generator_lakehouse for bronze and silver data
-- Warehouse: lead_generator_warehouse for gold data
+- Lakehouse: lead_generator_lakehouse for bronze, silver and gold data (news weren't used in gold data after all)
+- Warehouse: lead_generator_warehouse original plan was to use warehouse for gold data, but the idea had to be ditched since there were problems with creating relationships between tables
 - Notebooks for transforming and cleaning data: clean_job_postings, clean_news, vainu_api_bronze_to_lakehouse, vainu_bronze_to_silver
+- Master pipeline to run all notebooks and create gold data
 
 ### 4. PowerBI
 - App for sales team to look for leads
@@ -77,4 +78,10 @@ Job posting sites (Duunitori):
 ### 5. Jira
 - Kanban board including all tasks related to the project
 - Also some documentation included
+
+### Overview of master pipeline
+![image](https://github.com/user-attachments/assets/369ce3c4-125e-4be5-8ab4-3c865f5886bb)
+1. Notebooks for fetching data and transforming data are ran simultaneously
+2. Dataflows for creating gold tables of the data and loading the gold tables back to the lakehouse (if warehouse wants to be used, only destination for tables needs to be modified)
+3. Two stored procedures for moving data from one schema to another in the warehouse and for creating relationships. These are currently not activated, since warehouse didn't work, but they can be used, if warehouse starts working later
 
