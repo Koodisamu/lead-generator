@@ -85,5 +85,6 @@ Job posting sites (Duunitori):
 3. Two stored procedures for moving data from one schema to another in the warehouse and for creating relationships. These are currently not activated, since warehouse didn't work, but they can be used, if warehouse starts working later
 
 ### Architecture
-![lead-generator architecture](https://github.com/user-attachments/assets/990faa34-b362-42ff-9f63-257c07a39aa9)
+![lead-generator architecture](https://github.com/user-attachments/assets/eae8349c-52b9-4dde-8fe2-8290c656cc13)
+
 
