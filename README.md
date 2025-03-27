@@ -85,3 +85,6 @@ Job posting sites (Duunitori):
 2. Dataflows for creating gold tables of the data and loading the gold tables back to the lakehouse (if warehouse wants to be used, only destination for tables needs to be modified)
 3. Two stored procedures for moving data from one schema to another in the warehouse and for creating relationships. These are currently not activated, since warehouse didn't work, but they can be used, if warehouse starts working later
 
+### Architecture
+![lead-generator architecture](https://github.com/user-attachments/assets/990faa34-b362-42ff-9f63-257c07a39aa9)
+
