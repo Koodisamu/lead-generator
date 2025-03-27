@@ -35,7 +35,6 @@ Vainu:
 
 
 Job posting sites (Duunitori):
-- Use existing web scraping tools
 - Job posting volume, keywords
 
 ## Prospect validation
