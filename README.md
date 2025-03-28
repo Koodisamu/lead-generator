@@ -38,8 +38,11 @@ Job posting sites (Duunitori):
 
 #### Running scrapers
 - Scrapers need to be run manually and locally, preferably in VS Code
-- Config files for each scraper include the connection details to connect to storage account in Azure for uploading the resulting files
-- Dependencies need to be installed before running code, to do that, run command: pip install -r requirements.txt
+- Config file needs to be created under the scrapers folder, which wants to be run
+- In config file, add two rows:
+KEY_VAULT_URL = "Skillio's key vault url here"
+SECRET_NAME = "lg-storage-secret"
+- Dependencies need to be installed before running code, to do that, in the "web-scraper" -folder run command: pip install -r requirements.txt
 - To run the code for job-posting scraper, click Run in the main.py file under web-scraper folder
 - To get job-postings data to Power BI, run the "clean_job_postings" -notebook and after that "Dataflow jobs" in Fabric
 - To run the code for news scraper, click Run in the ampparit-scraper.py file under news-scraper folder. Note that news are currently not included in the resulting data in Power BI, but there is a "clean_news" -notebook in Fabric.
