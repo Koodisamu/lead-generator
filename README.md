@@ -87,4 +87,6 @@ Job posting sites (Duunitori):
 ### Architecture
 ![lead-generator architecture](https://github.com/user-attachments/assets/eae8349c-52b9-4dde-8fe2-8290c656cc13)
 
+### Color palette for Power BI
+Color palette for Power BI report can be found [here](https://coolors.co/1a2239-262d49-ef376d-fac10e-38d989-39c2f0)
 
