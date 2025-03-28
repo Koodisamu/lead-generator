@@ -39,8 +39,8 @@ Job posting sites (Duunitori):
 #### Running scrapers
 - Scrapers need to be run manually and locally, preferably in VS Code
 - Config file needs to be created under the scrapers folder, which wants to be run
-- In config file, add two rows:
-KEY_VAULT_URL = "Skillio's key vault url here"
+- In config file, add two rows:< br / >
+KEY_VAULT_URL = "Skillio's key vault url here"< br / >
 SECRET_NAME = "lg-storage-secret"
 - Dependencies need to be installed before running code, to do that, in the "web-scraper" -folder run command: pip install -r requirements.txt
 - To run the code for job-posting scraper, click Run in the main.py file under web-scraper folder
