@@ -83,6 +83,7 @@ Job posting sites (Duunitori):
 ![lead-generator architecture](https://github.com/user-attachments/assets/eae8349c-52b9-4dde-8fe2-8290c656cc13)
 
 ### Color palette for Power BI
+![Lead generator color palette](https://github.com/user-attachments/assets/bf797245-7e79-4c54-beaf-157cae89ca40)
 Color palette for Power BI report can be found [here](https://coolors.co/1a2239-262d49-ef376d-fac10e-38d989-39c2f0)
 
 ## Lead Score Calculation
