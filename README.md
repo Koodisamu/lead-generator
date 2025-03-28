@@ -97,3 +97,7 @@ Color palette for Power BI report can be found [here](https://coolors.co/1a2239-
 
 ## Final result
 A Power BI app for ranking leads
+
+## Future development opportunities
+- Slicer for adjusting weights for the lead score
+- Industry slicer to view scores per industry
