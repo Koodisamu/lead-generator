@@ -44,9 +44,9 @@ Job posting sites (Duunitori):
 - Cities: "helsinki", "tampere", "vantaa", "espoo", "oulu", "turku", "lahti", "jyväskylä"
 
 ## Team members and responsibilities
-- Samu Syväoja (code, Fabric)
-- Linda Ulma (code, Azure, Fabric)
-- Tomi Jolkkonen (code)
+- Samu Syväoja (code, Fabric, Power BI)
+- Linda Ulma (code, Azure, Fabric, Power BI)
+- Tomi Jolkkonen (code, Power BI)
 
 - Onni Niemelä (client, Skillio)
 
