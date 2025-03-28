@@ -48,6 +48,7 @@ Job posting sites (Duunitori):
 - Linda Ulma (code, Azure, Fabric, Power BI)
 - Tomi Jolkkonen (code, Power BI)
 
+
 - Onni Niemelä (client, Skillio)
 
 ## What's included in the project and how it's set up
@@ -90,3 +91,5 @@ Job posting sites (Duunitori):
 ### Color palette for Power BI
 Color palette for Power BI report can be found [here](https://coolors.co/1a2239-262d49-ef376d-fac10e-38d989-39c2f0)
 
+## Final result
+A Power BI app for ranking leads
