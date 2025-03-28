@@ -7,27 +7,6 @@ Conversion rate for sales leads has decreased, which creates a need for higher q
 A Power BI Tool is needed to be used by the sales team of Skillio. The tool should be able to:
 - List, filter and rank sales leads from multiple sources
 
-## MVP Requirements
-
-Power BI/analytics:
-- List and filter sales leads for Skillio
-
-Data pipeline:
-- Automated pipeline
-- Fabric workspace containing the data in Lakehouse/Warehouse
-- Defined lead quality requirements
-
-
-Data sources:
-- Vainu
-- Duunitori
-- Use multiple sources
-
-
-Documentation:
-- README file
-- Final presentation
-
 ## Sources
 
 Vainu:
@@ -90,6 +69,14 @@ Job posting sites (Duunitori):
 
 ### Color palette for Power BI
 Color palette for Power BI report can be found [here](https://coolors.co/1a2239-262d49-ef376d-fac10e-38d989-39c2f0)
+
+## Lead Score Calculation
+- Company Size Score: Company is evaluated based on turnover
+- Financial Health Score: Company is evaluated based on profit margin
+- Growth Score: Company is evaluated based on turnover and profit margin growth
+- Job Posting Score: Company is evaluated based on job postings with relevant keywords
+- Industry Score: Company is evaluated based on industry related keywords determined by Vainu
+- Lead Score: Weighted calculation of all of the above
 
 ## Final result
 A Power BI app for ranking leads
