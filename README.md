@@ -59,7 +59,7 @@ Job posting sites (Duunitori):
 - Notebooks for transforming and cleaning data: clean_job_postings, clean_news, vainu_api_bronze_to_lakehouse, vainu_bronze_to_silver
 - Master pipeline to run all notebooks and create gold data
 
-### Fetching data from Vainu
+#### Fetching data from Vainu
 - In Fabric, first run "vainu_api_bronze_to_lakehouse" -notebook
 - Next run "vainu_bronze_to_silver" -notebook
 - Run dataflows "Dataflow general", "Dataflow financial", "Dataflow industries official" and "Dataflow vainu industries"
