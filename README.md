@@ -35,7 +35,15 @@ Job posting sites (Duunitori):
 ### 1. Scrapers
 - Duunitori.fi scraper for scraping job postings in data engineering (code can be found in GitHub)
 - Ampparit.com scraper for scraping news in IT and looking for certaing keywords (code can be found in GitHub)
-- Scrapers need to be run manually and locally
+
+#### Running scrapers
+- Scrapers need to be run manually and locally, preferably in VS Code
+- Config files for each scraper include the connection details to connect to storage account in Azure for uploading the resulting files
+- Dependencies need to be installed before running code, to do that, run command: pip install -r requirements.txt
+- To run the code for job-posting scraper, click Run in the main.py file under web-scraper folder
+- To get job-postings data to Power BI, run the "clean_job_postings" -notebook and after that "Dataflow jobs" in Fabric
+- To run the code for news scraper, click Run in the ampparit-scraper.py file under news-scraper folder. Note that news are currently not included in the resulting data in Power BI, but there is a "clean_news" -notebook in Fabric.
+- Note: if you also need to update Vainu data, first run the scrapers and then you can just run the "Master pipeline" instead of the notebook and Dataflow
 
 ### 2. GitHub
 - Repository including code for scrapers
@@ -51,6 +59,12 @@ Job posting sites (Duunitori):
 - Notebooks for transforming and cleaning data: clean_job_postings, clean_news, vainu_api_bronze_to_lakehouse, vainu_bronze_to_silver
 - Master pipeline to run all notebooks and create gold data
 
+### Fetching data from Vainu
+- In Fabric, first run "vainu_api_bronze_to_lakehouse" -notebook
+- Next run "vainu_bronze_to_silver" -notebook
+- Run dataflows "Dataflow general", "Dataflow financial", "Dataflow industries official" and "Dataflow vainu industries"
+- Note: if you also need to update job-postings data, first run the scrapers (instructions under "Running scrapers") and then you can ignore the instructions above and just run the "Master pipeline"
+
 ### 4. PowerBI
 - App for sales team to look for leads
 
@@ -63,6 +77,7 @@ Job posting sites (Duunitori):
 1. Notebooks for fetching data and transforming data are ran simultaneously
 2. Dataflows for creating gold tables of the data and loading the gold tables back to the lakehouse (if warehouse wants to be used, only destination for tables needs to be modified)
 3. Two stored procedures for moving data from one schema to another in the warehouse and for creating relationships. These are currently not activated, since warehouse didn't work, but they can be used, if warehouse starts working later
+4. If all data needs to be updated, the pipeline can be run. If only for example job-postings need to fetched, please follow the instructions under "Running scrapers" in this file.
 
 ### Architecture
 ![lead-generator architecture](https://github.com/user-attachments/assets/eae8349c-52b9-4dde-8fe2-8290c656cc13)
