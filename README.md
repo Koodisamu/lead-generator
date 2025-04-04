@@ -27,17 +27,17 @@ Job posting sites (Duunitori):
 - Linda Ulma (code, Azure, Fabric, Power BI)
 - Tomi Jolkkonen (code, Power BI)  
 
-  ## Tech used
-  - Microsoft Fabric
-  - Python
-  - Azure
-  - Azure Blob Storage
-  - Azure Key Vault
-  - Fabric Lakehouse
-  - Fabric PySpark Notebook
-  - Fabric data pipelines
-  - Power BI
-  - DAX measures
+## Tech used
+- Microsoft Fabric
+- Python
+- Azure
+- Azure Blob Storage
+- Azure Key Vault
+- Fabric Lakehouse
+- Fabric PySpark Notebook
+- Fabric data pipelines
+- Power BI
+- DAX measures
 
 
 ## What's included in the project and how it's set up
