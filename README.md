@@ -1,10 +1,10 @@
-# Sales lead generation tool
+# Sales lead generation tool - final project of data engineer intensive training program
 
 ## Business requirements
 
-Conversion rate for sales leads has decreased, which creates a need for higher quantity of leads.
+Proof-of-concept of a lead generator tool to help sales teams in this case to find interesting prospects that would have a high possibility to hire data engineers.
 
-A Power BI Tool is needed to be used by the sales team of Skillio. The tool should be able to:
+A Power BI Tool is needed to be used by a sales team. The tool should be able to:
 - List, filter and rank sales leads from multiple sources
 
 ## Sources
@@ -26,8 +26,19 @@ Job posting sites (Duunitori):
 - Samu Syväoja (code, Fabric, Power BI)
 - Linda Ulma (code, Azure, Fabric, Power BI)
 - Tomi Jolkkonen (code, Power BI)  
-  
-- Onni Niemelä (client, Skillio)
+
+  ## Tech used
+  - Microsoft Fabric
+  - Python
+  - Azure
+  - Azure Blob Storage
+  - Azure Key Vault
+  - Fabric Lakehouse
+  - Fabric PySpark Notebook
+  - Fabric data pipelines
+  - Power BI
+  - DAX measures
+
 
 ## What's included in the project and how it's set up
 
@@ -39,8 +50,8 @@ Job posting sites (Duunitori):
 - Scrapers need to be run manually and locally, preferably in VS Code
 - Config file needs to be created under the scrapers folder, which wants to be run
 - In config file, add two rows:  
-KEY_VAULT_URL = "Skillio's key vault url here"  
-SECRET_NAME = "lg-storage-secret"
+KEY_VAULT_URL = "key vault url here to access vainu API data"  
+SECRET_NAME = "insert your secret name here"
 - Dependencies need to be installed before running code, to do that, in the "web-scraper" -folder run command: pip install -r requirements.txt
 - To run the code for job-posting scraper, click Run in the main.py file under web-scraper folder
 - To get job-postings data to Power BI, run the "clean_job_postings" -notebook and after that "Dataflow jobs" in Fabric
