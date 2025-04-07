@@ -86,14 +86,14 @@ SECRET_NAME = "insert your secret name here"
 - Also some documentation included
 
 ### Overview of master pipeline
-![image](https://github.com/user-attachments/assets/369ce3c4-125e-4be5-8ab4-3c865f5886bb)
+![Master Pipeline](photos/masterpipeline.png)
 1. Notebooks for fetching data and transforming data are ran simultaneously
 2. Dataflows for creating gold tables of the data and loading the gold tables back to the lakehouse (if warehouse wants to be used, only destination for tables needs to be modified)
 3. Two stored procedures for moving data from one schema to another in the warehouse and for creating relationships. These are currently not activated, since warehouse didn't work, but they can be used, if warehouse starts working later
 4. If all data needs to be updated, the pipeline can be run. If only for example job-postings need to fetched, please follow the instructions under "Running scrapers" in this file.
 
 ### Architecture
-![lead-generator architecture](https://github.com/user-attachments/assets/eae8349c-52b9-4dde-8fe2-8290c656cc13)
+![lead-generator architecture](photos/architecture.png)
 
 ### Color palette for Power BI
 Color palette for Power BI report can be found [here](https://coolors.co/1a2239-262d49-ef376d-fac10e-38d989-39c2f0)
@@ -108,7 +108,7 @@ Color palette for Power BI report can be found [here](https://coolors.co/1a2239-
 
 ## Final result
 A Power BI app for ranking leads
-![image](https://github.com/user-attachments/assets/35ce3207-e352-4d79-a72d-b718eb70d9c6)
+![image](photos/powerbi.png)
 
 
 ## Future development opportunities
